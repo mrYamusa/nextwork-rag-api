@@ -1,0 +1,7 @@
+Docker Hub is a cloud-based repository service that acts as a central platform for storing, managing, and sharing Docker container images.
+ It functions as a registry where developers can push (upload) and pull (download) container images over the internet, supporting both public and private repositories.
+ This centralized storage enables consistent application deployment across different environments by encapsulating applications and their dependencies into self-contained units.
+
+The platform provides a vast library of pre-built, ready-to-use container images for operating systems, frameworks, databases, and more, accelerating development workflows and reducing setup time.
+ Developers can extend these images to create custom applications, build them locally, and then push them to Docker Hub for sharing with teams or the broader community.
+ Docker Hub also supports automated builds by integrating with code repositories like GitHub and Bitbucket, allowing images to be rebuilt automatically when code changes are pushed
