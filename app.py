@@ -1,17 +1,22 @@
+import os
 from typing import Annotated
 from uuid import uuid4
 from fastapi import FastAPI, UploadFile, Depends
 from contextlib import asynccontextmanager
 from rich import panel, print
 import chromadb
-import ollama
 from ollama import Client
 from pathlib import Path
-import shutil
 from scalar_fastapi import get_scalar_api_reference
 from embed_code.embed import load_data_from_directory
 
+# Mock LLM mode for CI testing
+USE_MOCK_LLM = os.getenv("USE_MOCK_LLM", "0") == "1"
+# Path for documents
 UPLOAD_DIR = Path("./collection_of_random_data")
+
+if not USE_MOCK_LLM:
+    import ollama
 
 
 async def dummyfunc():
@@ -44,6 +49,9 @@ async def get(question: str) -> dict[str, str]:
         else ""
     )
     print("context_text_documents active")
+
+    if USE_MOCK_LLM:
+        return {"answer": f"{context_text_documents}"}
 
     answer = ollama_client.generate(
         model="tinyllama",
