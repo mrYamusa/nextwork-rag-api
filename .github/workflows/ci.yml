@@ -3,7 +3,7 @@ name: RAG CI Pipeline
 on:
   push:
     paths:
-      - "k8s.txt"
+      - "semantic_test.py"
       - "app.py"
       - "collection_of_random_data/**"
       - "embed_code/embed.py"
