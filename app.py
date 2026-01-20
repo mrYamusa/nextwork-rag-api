@@ -101,7 +101,7 @@ async def create_upload_file(
     # Read the file content once
     file_content = await file.read()
 
-    # Save file to disk
+    # Save file to disk -
     try:
         with open(file_path, "wb") as f:
             f.write(file_content)
