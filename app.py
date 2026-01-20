@@ -86,7 +86,7 @@ async def create_upload_file(
     if not file:
         return {"message": "No upload file sent"}
 
-    # Ensure upload directory exists
+    # Ensure upload directory is existing
     UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
     file_path = UPLOAD_DIR / file.filename

@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install fastapi uvicorn chromadb requests python-multipart
+          pip install fastapi uvicorn chromadb requests python-multipart ollama
 
       - name: Rebuild embeddings
         run: python embed_code/embed.py
