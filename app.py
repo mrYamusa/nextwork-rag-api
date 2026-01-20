@@ -98,7 +98,7 @@ async def create_upload_file(
         )
     )
 
-    # Read file content once
+    # Read the file content once
     file_content = await file.read()
 
     # Save file to disk
